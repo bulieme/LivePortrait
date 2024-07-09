@@ -144,12 +144,13 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
         inputs=image_input,
         outputs=[eye_retargeting_slider, lip_retargeting_slider, retargeting_input_image]
     )
-    demo.queue(concurrency_count=511, max_size=1022).launch(
-        #server_name=args.server_name,
-        #server_port=args.server_port,
-        share=True,
-    )
+    
 
 ##########################################################
 
 
+demo.queue(concurrency_count=511, max_size=1022).launch(
+        #server_name=args.server_name,
+        #server_port=args.server_port,
+        share=True,
+    )
