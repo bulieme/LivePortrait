@@ -27,12 +27,16 @@ args = tyro.cli(ArgumentConfig)
 print("Im here3")
 # specify configs for inference
 inference_cfg = partial_fields(InferenceConfig, args.__dict__)  # use attribute of args to initial InferenceConfig
+print("Im here3.1")
 crop_cfg = partial_fields(CropConfig, args.__dict__)  # use attribute of args to initial CropConfig
+
+print("Im here3.2")
 gradio_pipeline = GradioPipeline(
     inference_cfg=inference_cfg,
     crop_cfg=crop_cfg,
     args=args
 )
+print("Im here3.3")
 print("Im here4")
 # assets
 title_md = "assets/gradio_title.md"
