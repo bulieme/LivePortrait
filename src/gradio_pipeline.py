@@ -4,14 +4,16 @@
 Pipeline for gradio
 """
 import gradio as gr
+print("hehe1")
 from .config.argument_config import ArgumentConfig
 from .live_portrait_pipeline import LivePortraitPipeline
+print("hehe2")
 from .utils.io import load_img_online
 from .utils.rprint import rlog as log
 from .utils.crop import prepare_paste_back, paste_back
 from .utils.camera import get_rotation_matrix
 from .utils.retargeting_utils import calc_eye_close_ratio, calc_lip_close_ratio
-
+print("hehe3")
 def update_args(args, user_args):
     """update the args according to user inputs
     """
@@ -23,6 +25,7 @@ def update_args(args, user_args):
 class GradioPipeline(LivePortraitPipeline):
 
     def __init__(self, inference_cfg, crop_cfg, args: ArgumentConfig):
+        print("hehe4")
         super().__init__(inference_cfg, crop_cfg)
         # self.live_portrait_wrapper = self.live_portrait_wrapper
         self.args = args
