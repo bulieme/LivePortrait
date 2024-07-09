@@ -23,9 +23,9 @@ def update_args(args, user_args):
     return args
 
 class GradioPipeline(LivePortraitPipeline):
+    print("hehe4")
 
     def __init__(self, inference_cfg, crop_cfg, args: ArgumentConfig):
-        print("hehe4")
         super().__init__(inference_cfg, crop_cfg)
         # self.live_portrait_wrapper = self.live_portrait_wrapper
         self.args = args
