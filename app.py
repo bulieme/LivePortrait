@@ -4,6 +4,7 @@
 The entrance of the gradio
 """
 
+print("Im here1")
 import tyro
 import gradio as gr
 import os.path as osp
@@ -13,6 +14,7 @@ from src.config.crop_config import CropConfig
 from src.config.argument_config import ArgumentConfig
 from src.config.inference_config import InferenceConfig
 
+print("Im here2")
 
 def partial_fields(target_class, kwargs):
     return target_class(**{k: v for k, v in kwargs.items() if hasattr(target_class, k)})
