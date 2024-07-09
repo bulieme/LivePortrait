@@ -149,7 +149,7 @@ with gr.Blocks(theme=gr.themes.Soft()) as demo:
 ##########################################################
 
 
-demo.queue(concurrency_count=511, max_size=1022).launch(
+demo.launch(
         #server_name=args.server_name,
         #server_port=args.server_port,
         share=True,
