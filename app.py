@@ -24,6 +24,7 @@ def partial_fields(target_class, kwargs):
 tyro.extras.set_accent_color("bright_cyan")
 args = tyro.cli(ArgumentConfig)
 
+print("Im here3")
 # specify configs for inference
 inference_cfg = partial_fields(InferenceConfig, args.__dict__)  # use attribute of args to initial InferenceConfig
 crop_cfg = partial_fields(CropConfig, args.__dict__)  # use attribute of args to initial CropConfig
@@ -32,6 +33,7 @@ gradio_pipeline = GradioPipeline(
     crop_cfg=crop_cfg,
     args=args
 )
+print("Im here4")
 # assets
 title_md = "assets/gradio_title.md"
 example_portrait_dir = "assets/examples/source"
@@ -45,6 +47,7 @@ data_examples = [
 ]
 #################### interface logic ####################
 
+print("Im here5")
 # Define components first
 eye_retargeting_slider = gr.Slider(minimum=0, maximum=0.8, step=0.01, label="target eyes-open ratio")
 lip_retargeting_slider = gr.Slider(minimum=0, maximum=0.8, step=0.01, label="target lip-open ratio")
@@ -54,6 +57,7 @@ output_image_paste_back = gr.Image(type="numpy")
 output_video = gr.Video()
 output_video_concat = gr.Video()
 
+print("Im here6")
 with gr.Blocks(theme=gr.themes.Soft()) as demo:
     gr.HTML(load_description(title_md))
     gr.Markdown(load_description("assets/gradio_description_upload.md"))
